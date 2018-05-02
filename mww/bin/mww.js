@@ -5,7 +5,7 @@
 var program = require('commander');
 
 const showVersion = ()=>{
-	console.log(program.version)
+	console.log(require('../package.json').version)
 }
 
 program
@@ -31,4 +31,4 @@ program
 
 program.parse(process.argv);
 
-console.log('heyunjiang');
+console.log(process.argv);
