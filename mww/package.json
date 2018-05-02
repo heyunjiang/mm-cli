@@ -1,20 +1,19 @@
 {
   "name": "mww",
-  "description": "The first cli",
-  "version": "1.0.0",
+  "description": "mww cli",
+  "version": "1.0.1",
+  "author": "heyunjiang",
   "keywords": [
     "toolkit",
     "cli"
   ],
-  "files": [
-    "lib",
-    "bin"
-  ],
+  "files": ["bin"],
   "bin": {
     "mww": "./bin/mww.js"
   },
   "dependencies": {
     "commander": "^2.11.0",
+    "vinyl-fs": "^3.0.2",
     "which": "^1.3.0"
   },
   "devDependencies": {},

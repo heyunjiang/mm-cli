@@ -1,0 +1,40 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "practice for webpack",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "hyj-func": "^1.2.0",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-import": "^1.6.6",
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "css-loader": "^0.28.10",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.0.6",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.0.1",
+    "vue-loader": "^14.2.2",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "heyunjiang",
+  "license": "ISC"
+}
