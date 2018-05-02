@@ -13,7 +13,7 @@ var fileCopy = require('./fileCopy');
 var excute = require('./excute');
 const join = require('path').join;
 
-const showVersion = ()=>{
+const showVersion = function() {
 	console.log(require('../package.json').version)
 }
 

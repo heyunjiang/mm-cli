@@ -1,7 +1,7 @@
 {
   "name": "mww",
   "description": "mww cli",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "heyunjiang",
   "keywords": [
     "toolkit",
@@ -24,6 +24,12 @@
   "engine-strict": true,
   "engines": {
     "node": ">= 0.12"
+  },
+  "homepage": "",
+  "mail": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heyunjiang"
   },
   "licenses": [
     {
