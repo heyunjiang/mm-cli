@@ -17,6 +17,8 @@ const showVersion = function() {
 	console.log(require('../package.json').version)
 }
 
+console.log(process.argv)
+
 program
   .option('-v, --version', 'show version', showVersion);
 
@@ -57,13 +59,13 @@ program
             if (!options.uninstall) {
                 /*4. 执行 npm install*/
                 excute(function(code) {
-                    console.error(`
+                    /*console.error(`
 ${foldName} is created, use
 
   cd ${foldName}
 
 to enter your created path`)
-                })
+*/                })
             }
         })
     });
