@@ -1,13 +1,16 @@
 {
   "name": "mww",
   "description": "mww cli",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "heyunjiang",
   "keywords": [
     "toolkit",
     "cli"
   ],
-  "files": ["bin"],
+  "files": [
+    "bin",
+    "src"
+  ],
   "bin": {
     "mww": "./bin/mww.js"
   },
