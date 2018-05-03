@@ -22,7 +22,7 @@ const excute = function(cb) {
       installing
       waitting
 
-      if you want to not install, you can use --uninstall command`)
+(if you want to not install, you can use --uninstall command)`)
     const runner = require('child_process').spawn(resolved, ['install'])
     runner.on('close', function (code) {
       cb(code)

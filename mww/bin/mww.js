@@ -42,7 +42,7 @@ program
 program
     .command('new')
     .description('create filefold in current working directory')
-    .option('-un, --uninstall', 'Whether to install node_modules')
+    .option('-u, --uninstall', 'Whether to install node_modules')
     .action(function(options) {
         const foldName = program.args[0]
         if(typeof(foldName) !== 'string') {
@@ -56,7 +56,7 @@ program
         /*3. 复制工程文件*/
         fileCopy(function(){
             //复制完毕
-            if (!options.uninstall) {
+            if (!program.args[1].uninstall) {
                 /*4. 执行 npm install*/
                 excute(function(code) {
                     createSuccess(foldName)
