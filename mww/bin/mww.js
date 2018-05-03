@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /*
  * 入口文件
  * designer: heyunjiang
@@ -16,8 +18,6 @@ const join = require('path').join;
 const showVersion = function() {
 	console.log(require('../package.json').version)
 }
-
-console.log(process.argv)
 
 program
   .option('-v, --version', 'show version', showVersion);
@@ -59,16 +59,25 @@ program
             if (!options.uninstall) {
                 /*4. 执行 npm install*/
                 excute(function(code) {
-                    /*console.error(`
-${foldName} is created, use
-
-  cd ${foldName}
-
-to enter your created path`)
-*/                })
+                    createSuccess(foldName)
+                })
+            } else {
+                createSuccess(foldName)
             }
         })
     });
 
 program.parse(process.argv);
+
+
+function createSuccess(foldName) {
+    console.error(`
+${foldName} is created, use
+
+  cd ${foldName}
+
+to enter your created path`)
+}
+
+
 

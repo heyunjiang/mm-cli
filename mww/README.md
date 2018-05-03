@@ -6,5 +6,6 @@
 
 ### 实现功能
 
-1. mww -v | --version
-2. mww list (-a | --all) 
+1. `mww -v | --version`
+2. `mww list (-a | --all)`
+3. `mww new myvue [--uninstall]`
