@@ -1,7 +1,7 @@
 {
   "name": "mww",
   "description": "mww cli",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "author": "heyunjiang",
   "keywords": [
     "toolkit",
@@ -15,12 +15,23 @@
     "mww": "./bin/mww.js"
   },
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.11.0",
     "vinyl-fs": "^3.0.2",
     "which": "^1.3.0"
   },
-  "devDependencies": {},
-  "scripts": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "build": "babel es6 -d bin"
+  },
   "engine-strict": true,
   "engines": {
     "node": ">= 0.12"

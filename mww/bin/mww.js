@@ -13,6 +13,7 @@ var program = require('commander');
 var addFileFold = require('./addFileFold');
 var fileCopy = require('./fileCopy');
 var excute = require('./excute');
+var osInfo = require('./osInfo');
 const join = require('path').join;
 
 const showVersion = function() {
@@ -37,6 +38,13 @@ program
             }
             console.log(list.join(' '));
         });
+    });
+
+program
+    .command('os')
+    .description('列出os信息，网络端口信息')
+    .action(function() {
+        osInfo()
     });
 
 program

@@ -1,5 +1,6 @@
 /*
  * 复制项目工程文件, 将 src 目录下所有文件复制到 process.ced() 目录下
+ * 技术选型：是否可以考虑使用 `babel src --out-dir lib --copy-files` 进行文件夹复制
  * 关键知识点：stream.pipe, vinyl-fs
  * designer: heyunjiang
  * time: 2018.5.2
