@@ -4,7 +4,7 @@
  * 关键知识点：stream.pipe, vinyl-fs
  * designer: heyunjiang
  * time: 2018.5.2
- * update: 2018.5.2
+ * update: 2018.10.30
  * todo：vinyl-fs实现的文件夹复制是怎么实现的
  */
 
@@ -13,13 +13,13 @@ const stream = require('stream');
 const vfs = require('vinyl-fs');
 const {createReadStream, createWriteStream} = require('fs');
 
-const fileCopy = function(cb) {
+const fileCopy = function(type, cb) {
 	if(!cb || typeof(cb) !== 'function') {
 		console.error('回调函数传参错误')
 		process.exit(1)
 	}
 	const dest = process.cwd()
-	const src = join(__dirname, '../src')
+	const src = join(__dirname, '../src', type)
 	try {
 	  vfs.src(['**/*', '!node_modules/**/*'], {cwd: src, cwdbase: true, dot: true})
 	    .pipe(vfs.dest(dest))

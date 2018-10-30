@@ -9,8 +9,8 @@ const which = require('which')
 
 const excute = function(cb) {
   if(!cb || typeof(cb) !== 'function') {
-	console.error('回调函数传参错误')
-	process.exit(1)
+	  console.error('回调函数传参错误')
+	  process.exit(1)
   }
   const resolved = which.sync('npm', {nothrow: true})
 

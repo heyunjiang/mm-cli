@@ -54,25 +54,19 @@ program
     .action(function(options) {
         const foldName = program.args[0]
         if(typeof(foldName) !== 'string') {
-            console.log('请输入项目名称')
-            process.exit(1)
+            console.warn('请输入项目名称');
+            process.exit(1);
         }
-        /*1. 创建工程目录*/
-        addFileFold(foldName)
-        /*2. 进入工程目录*/
-        process.chdir(join(process.cwd(), foldName))
-        /*3. 复制工程文件*/
-        fileCopy(function(){
-            //复制完毕
-            if (!program.args[1].uninstall) {
-                /*4. 执行 npm install*/
-                excute(function(code) {
-                    createSuccess(foldName)
-                })
-            } else {
-                createSuccess(foldName)
+        process.stdout.write('请输入构建项目类型(react | vue): ');
+        let choice = 'react';
+        process.stdin.once('data', function (choice) {
+            choice = (choice+'').trim();
+            if(!['react', 'vue'].includes(choice)) {
+                console.warn('项目类型必须为 react 或 vue');
+                process.exit(1);
             }
-        })
+            build(foldName, choice);
+        });
     });
 
 program.parse(process.argv);
@@ -85,7 +79,28 @@ ${foldName} is created, use
   cd ${foldName}
 
 to enter your created path`)
+    process.exit(0);
 }
 
-
+/*
+ * 创建项目
+ */
+function build(foldName, type) {
+    /*1. 创建工程目录*/
+    addFileFold(foldName)
+    /*2. 进入工程目录*/
+    process.chdir(join(process.cwd(), foldName))
+    /*3. 复制工程文件*/
+    fileCopy(type, function(){
+        //复制完毕
+        if (!program.args[1].uninstall) {
+            /*4. 执行 npm install*/
+            excute(function(code) {
+                createSuccess(foldName)
+            })
+        } else {
+             createSuccess(foldName)
+        }
+    })
+}
 
