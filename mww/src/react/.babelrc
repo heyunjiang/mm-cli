@@ -1,0 +1,14 @@
+{
+  "presets": [["env", { "modules": false }], "react", "stage-2"],
+  "plugins": [
+    ["import", { 
+      "libraryName": "antd", 
+      "libraryDirectory": "es", 
+      "style": true
+    }],
+    "syntax-dynamic-import",
+    "transform-runtime",
+    "transform-function-bind",
+    "transform-react-jsx-source"
+  ]
+}

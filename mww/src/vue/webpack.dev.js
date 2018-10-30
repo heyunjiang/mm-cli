@@ -21,6 +21,7 @@ module.exports = merge(common, {
 	    compress: true,
 	    port: 9000,
 	    hot: true,
+	    open: true,
 	    host: '0.0.0.0'
 	    /*proxy: {
 	    	"/wxservice/": {
