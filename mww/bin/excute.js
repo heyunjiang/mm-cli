@@ -19,8 +19,7 @@ const excute = function(cb) {
   } else {
     console.log(`run npm install
       
-      installing
-      waitting
+      npm packages are installing, please wait a minute!!!
 
 (if you want to not install, you can use --uninstall command)`)
     const runner = require('child_process').spawn(resolved, ['install'])
