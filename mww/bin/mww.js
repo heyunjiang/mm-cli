@@ -20,6 +20,11 @@ const showVersion = function() {
 	console.log(require('../package.json').version)
 }
 
+const getSourceFileFolderName = function() {
+    let nameArr =  require('fs').readdirSync(require('path').resolve(__dirname, '..', 'src'));
+    return nameArr.join(' | ')
+}
+
 program
   .option('-v, --version', 'show version', showVersion);
 
@@ -57,12 +62,12 @@ program
             console.warn('请输入项目名称');
             process.exit(1);
         }
-        process.stdout.write('请输入构建项目类型(react | vue): ');
+        process.stdout.write('请输入构建项目类型(' + getSourceFileFolderName() + '): ');
         let choice = 'react';
         process.stdin.once('data', function (choice) {
             choice = (choice+'').trim();
-            if(!['react', 'vue'].includes(choice)) {
-                console.warn('项目类型必须为 react 或 vue');
+            if(!['react', 'vue', 'reactSimple'].includes(choice)) {
+                console.warn('项目类型必须为 ' + getSourceFileFolderName() + ' 中的一种');
                 process.exit(1);
             }
             build(foldName, choice);

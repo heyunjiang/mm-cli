@@ -59,6 +59,8 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "style-loader": "^0.20.3",
+    "mocker-api": "^1.6.6",
+    "mockjs": "^1.0.1-beta3",
     "uglifyjs-webpack-plugin": "^1.3.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.1.1",
